@@ -1,0 +1,36 @@
+server:
+  port: 10002
+spring:
+  application:
+    name: account-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 888888
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    type: com.zaxxer.hikari.HikariDataSource
+
+#file为注册配置中心的配置
+#seata:
+#  tx-service-group: mall-group
+#  service:
+#    grouplist:
+#      default: 127.0.0.1:8091
+#    vgroup-mapping:
+#      mall-group: default
+
+#nacos为注册配置中心的配置
+seata:
+  tx-service-group: my_test_tx_group
+  registry:
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+  config:
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos

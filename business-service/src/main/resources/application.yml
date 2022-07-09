@@ -1,0 +1,30 @@
+server:
+  port: 10003
+spring:
+  application:
+    name: business-service
+
+#file为注册配置中心的配置
+#seata:
+#  tx-service-group: mall-group
+#  service:
+#    grouplist:
+#      default: 127.0.0.1:8091
+#    vgroup-mapping:
+#      mall-group: default
+
+#nacos为注册配置中心的配置
+seata:
+  tx-service-group: my_test_tx_group
+  registry:
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
+  config:
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      username: nacos
+      password: nacos
